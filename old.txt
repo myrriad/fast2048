@@ -1,0 +1,40 @@
+"shift all to A direction"
+{
+    A+not(A)B+not(A or B)C+not(A or B or C)D,
+    (A or 0)B + (A xor B)C + (((A or 0) + (B or 0) + (C or 0)) = 1)D,
+    (A and B)C+(A*B*not(C) or A*not(B)*C or not(A)*B*C)D,
+    (A and B and C)D
+}
+{A+not(A)B+not(A or B)C+not(A or B or C)D,(A or 0)B+(A xor B)C+(((A or 0)+(B or 0)+(C or 0))=1)D,(A and B)C+(A*B*not(C) or A*not(B)*C or not(A)*B*C)D,(A and B and C)D}
+"perform merge and then left shift"
+"
+[]..        M1 iff (A = B) and nonzero
+.[].        M2 iff (A != B) and (B = C) and nonzero
+..[]        M3 iff ((A = B) or (B != C)) and (C = D) and nonzero. if (A = B) and B is zero then we know that all else is 0. B != C is true only if one is nonzero
+.<-.
+..<-
+"
+"
+{
+    A+M1,
+    not(M1)*B+M2
+       + (M1)(C + (C=D) and D),
+    ((A != B) and (B != C))(C + ((C = D) and D)) + (A = B or B = C)D
+    ((A != B) and (B != C) and (C != D))D this last one works because if there is one equality then even if it isn't the equality that ended up happening there's still going to be an opening
+    
+}"
+
+Prompt A
+Prompt B
+Prompt C
+Prompt D
+
+Disp {
+    A + ((A = B) and A)I,
+    (A != B)*(B + ((B = C) and B)I)
+       + (A = B)*(C + ((C=D) and D)I),
+    (A = B)(C != D)D + (A != B)((B = C)D + (B != C)(C + ((C=D) and D)I)),
+    ((A != B) and (B != C) and (C != D))D
+}
+
+Disp {A+((A=B) and A)I,(A!=B)*(B+((B=C) and B)I)+(A=B)*(C+((C=D) and D)I),(A=B)(C!=D)D+(A!=B)((B=C)D+(B!=C)(C+((C=D) and D)I)),((A!=B) and (B!=C) and (C!=D))D}

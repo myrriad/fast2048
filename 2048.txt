@@ -1,0 +1,121 @@
+A2 = 
+\overline{A}B.+A.
+
+B2 = 
+\overline{AB}C.+AB.
+
+C2 = 
+\overline{ABC}D.+ABC.
+
+D2 = 
+ABCD.
+
+A3 = 
+\overline{A}\overline{B}C.+\overline{A}B.+A.
+
+B3 = 
+(\overline{A}\overline{B}+\overline{B}\overline{C}+\overline{A}\overline{C})D.
++(B\overline{A}+A\overline{B})C.
++AB.
+
+C3 =
+\overline{A}\overline{B}+\overline{B}\overline{C}+\overline{A}\overline{C}+\overline{D}(\overline{ABC})D.
++\overline{A}BC+A\overline{B}C+AB\overline{C}D.
++ABC.
+
+C3 = 
+\overline{ABC}D.
++ABC.
+
+
+A4 = 
+\overline{A}\overline{B}C+\overline{A}B\overline{C}+A\overline{B}\overline{C}D.
++B\overline{A}+A\overline{B}C.
+
+A4 = 
+\overline{A+B+C}D.
++0C.
++0B.
++\overline{A}\overline{B}C.+\overline{A}B.+A.
+
+B4 =
+(\overline{B+C+D}+\overline{A+C+D}+\overline{A+B+D}+\overline{A+B+C})D.
++\overline{A}\overline{B}C+\overline{A}B\overline{C}+A\overline{B}\overline{C}D.
++(B\overline{A}+A\overline{B})C.
++AB.
+
+(\overline{B+C+D}+\overline{A+C+D}+\overline{A+B+D}+\overline{A+B+C})
++\overline{A}\overline{B}C+\overline{A}B\overline{C}+A\overline{B}\overline{C}
+
+B4 = 
+(\overline{A}\overline{B}+\overline{B}\overline{C}+\overline{A}\overline{C})D.
++(B\overline{A}+A\overline{B})C.
++AB.
+
+(B\overline{A}+A\overline{B}) = B xor A
+
+
+FINAL
+
+A4 = 
+\overline{A+B+C}D.
++\overline{A+B}C.
++\overline{A}B.
++A.
+
+= not(A+B+C)D + not(A+B)C + not(A)B + A
+
+B4 = 
+(\overline{A}\overline{B}+\overline{B}\overline{C}+\overline{A}\overline{C})D.
++(B\overline{A}+A\overline{B})C.
++AB.
+
+= (not(A+B)+not(B+C)+not(A+C))D + (A xor B)C + min(A,1)B
+
+C4 = C3 = 
+\overline{ABC}D.
++ABC.
+
+= not(A and B and C)D + (A and B)C
+
+D4 = D3 = D2 =
+ABCD.
+
+= (A and B and C)D 
+
+https://quicklatex.com/cache3/22/ql_a3d94e51faaed516813e6f21ac1dff22_l3.png
+
+ABOVE: 
+A' = not(A and B)B + A
+B' = not(A and B)B
+
+-------
+A' = (A xor B)B + A
+B' = (A and B)B
+-------
+BETTER STEP FUNCTION:
+A' = A. + AB.
+B' = AB.
+
+OR
+
+A' = !Ab + a
+B' = Ab
+
+
+a' = !Ab + a
+b' = Ab
+b" = !B'c' + b'
+
+c" = B'c'
+
+b" = !(AB)c + Ab
+c" = ABc
+
+c2 = !C"d" + c"
+d2 = C"d"
+
+c2 = !(ABC)d + ABc
+d2 = ABCd
+
+orthocenter/poptropica 
